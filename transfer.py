@@ -7,7 +7,7 @@ to_dir = '/files'
 to_dir_abs = os.path.abspath(to_dir)
 
 if not os.path.exists(to_dir_abs):
-    os.mkdirs(to_dir_abs)
+    os.makedirs(to_dir_abs)
 
 all_files = [f for f in os.listdir(from_dir) if 'html' in f]
 
