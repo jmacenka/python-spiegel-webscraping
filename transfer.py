@@ -1,5 +1,5 @@
 import os
-from shutil import copyfile
+from shutil import move
 
 from_dir = '/var/lib/docker/volumes/webscraping/_data'
 to_dir = 'files'
@@ -16,7 +16,7 @@ all_files = [f for f in os.listdir(from_dir) if 'html' in f]
 for f in all_files:
     from_path = os.path.join(from_dir,f)
     to_path = os.path.join(to_dir_abs,f)
-    copyfile(from_path,to_path)
+    move(from_path,to_path)
     print(f'Copied: {f}')
 
 print('\nAll Done')
